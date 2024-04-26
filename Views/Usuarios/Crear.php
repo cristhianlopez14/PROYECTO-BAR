@@ -27,6 +27,22 @@
                             <input type="password" placeholder="Confirma Contraseña" name="confContraseña" class="form-control">
                         </div>
                         <div class="mb-3">
+                        <label for="Sucursal" class="form-label">Sucursal</label>
+                        <?php
+                            require '../../Assets/ConectionBD/conexionbd.php';
+                            $sql1 = "SELECT * FROM sucursal";
+                            $arraySucursal = $conexion->query($sql1);
+                        ?>
+                            <select name="sucursal" id="" class="form-select" aria-label="Default select example">
+                                <?php 
+                                    while($opcionTipoUsuario = $arraySucursal->fetch_array(MYSQLI_ASSOC)) {
+                                ?>
+                                <option  value=<?php echo $opcionTipoUsuario['idSucursal']; ?>><?php echo $opcionTipoUsuario['nombreSucursal']; ?></option>
+                                <?php }
+                                ?>       
+                            </select>
+                        </div>
+                        <div class="mb-3">
                         <label for="idTipoUsuario" class="form-label">Tipo Usuario</label>
                         <?php
                             require '../../Assets/ConectionBD/conexionbd.php';

@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="../Administrador/administrador.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Productos</a>
@@ -89,6 +89,7 @@
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>Rol</th>
+                    <th>Sucursal</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -104,6 +105,8 @@
                     <th><?php echo $row['usuario']; ?></th>
                     <th><?php echo $row['contraseña']; ?></th>
                     <th><?php echo $row['idTipoUsuario']; ?></th>
+                    <th><?php echo $row['idSucursal']; ?></th>
+
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Editar<?php echo $row['idUsuario'];?>">Editar</button>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal<?php echo $row['idUsuario'];?>">Eliminar</button></a>
