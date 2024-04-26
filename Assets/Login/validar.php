@@ -9,7 +9,7 @@ if(!empty($_POST["Ingresar"])){
         $contraseña = $_POST["contraseña"];
 
         // Ejecutar consulta SQL para verificar las credenciales
-        $sql = $conexion->query("SELECT * FROM usuario WHERE usuario='$usuario' AND contraseña='$contraseña'");
+        $sql = $conexion->query("SELECT * FROM usuario WHERE usuario='$usuario' AND contraseña='$contraseña' AND estado = 'Activo'");
         
         // Verificar si se obtuvieron resultados de la consulta
         if($sql->num_rows > 0){
