@@ -94,7 +94,7 @@
             </thead>
             <tbody>
                 <?php 
-                    $sqlMostrar = "SELECT * FROM usuario";
+                    $sqlMostrar = "SELECT * FROM usuario WHERE estado = 'activo'";
                     $resultadoMostrar = $conexion->query($sqlMostrar);
                     while($row = $resultadoMostrar->fetch_array(MYSQLI_ASSOC)) {
                 ?>

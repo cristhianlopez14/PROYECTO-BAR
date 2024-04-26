@@ -6,7 +6,7 @@
 
     $idUsuarioEliminar = $_POST['idUsuario'];
 	
-	$sql3 = "DELETE FROM usuario  WHERE idUsuario = $idUsuarioEliminar";
+	$sql3 = "UPDATE  usuario SET estado='Inactivo' WHERE idUsuario = $idUsuarioEliminar";
 	$resultado = $conexion->query($sql3);
 	if ($sql3==1) {
 		echo 'usuario eliminado corectamente';
