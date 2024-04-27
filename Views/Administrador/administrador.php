@@ -56,7 +56,7 @@
             <li><a href="../Usuarios/Usuarios.php">Usuarios</a></li>
             <li><a href="../mesa/administrarMesas.php">Sucursales</a></li>
             <li><a href="../views/cajero.php">Ventas</a></li>
-            <li><a href="../login/singUp.php">Inventario</a></li>
+            <li><a href="../Inventario/productos.php">Inventario</a></li>
             <li><a href="">Informes</a></li>
         </ul>
     </div>
