@@ -29,6 +29,7 @@
             display: inline-block;
             margin-right: 20px;
         }
+
         .MenuAdmin ul li a {
             text-decoration: none;
             color: #333;
@@ -40,6 +41,10 @@
         .MenuAdmin ul li a:hover {
             background-color: #ced4da;
         }
+        input {
+            border:none;
+        }
+        
         @media screen and (max-width: 768px) {
             .MenuAdmin ul li {
                 display: block;
@@ -52,13 +57,20 @@
     <h1>Administrador</h1>
 
     <div class="MenuAdmin">
+    <form action="../Informe/generar_informe.php" method="post">
+
         <ul>
             <li><a href="../Usuarios/Usuarios.php">Usuarios</a></li>
-            <li><a href="../mesa/administrarMesas.php">Sucursales</a></li>
+            <li><a href="../sucursales/sucursal.php">Sucursales</a></li>
             <li><a href="../Pedido/pedido.php">Tomar Pedido</a></li>
             <li><a href="../Inventario/productos.php">Inventario</a></li>
-            <li><a href="">Informes</a></li>
+            <li>
+                <a href="#">
+                    <input type="submit" value="Generar Informe" name="generar_informe">
+                </a>
+            </li>
         </ul>
+    </form>
     </div>
 </body>
 </html>

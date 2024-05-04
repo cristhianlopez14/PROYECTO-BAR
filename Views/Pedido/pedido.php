@@ -120,11 +120,16 @@
                     <th><?php echo $row['numeroProductos']; ?></th>
                     <th><?php echo $row['fechaRegistro']; ?></th>
                     <th><?php echo $row['idSucursal']; ?></th>
-                    <th><?php echo $row['productos']; ?></th>
+                    <th>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Ver<?php echo $row['idPedido'];?>">Ver Producto</button>
+                    </th>
 
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Editar<?php echo $row['idPedido'];?>">Agregar Producto</button>
                     </td>
+                    <?php
+                        include("verPedido.php"); 
+                    ?>
                     <?php
                         include("editarPedido.php"); 
                     ?>

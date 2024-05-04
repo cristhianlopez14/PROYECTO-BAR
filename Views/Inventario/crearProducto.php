@@ -17,6 +17,7 @@
                             <label for="descripcion" class="form-label">Descripcion</label>
                             <input type="text" placeholder="Descripcion Producto" name="descripcion" class="form-control">
                         </div>
+                            <label for="cantidad" class="form-label">Cantidad</label>
                             <input type="text" placeholder="Cantidad Producto" value="0" name="cantidad" class="form-control">
                         <div class="mb-3">
                             <label for="precio" class="form-label">Precio</label>

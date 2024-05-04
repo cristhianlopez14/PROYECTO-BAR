@@ -56,6 +56,7 @@
                     
                     <form action="#" method="post">
                         <input type="text" name="idPedido" value="<?php echo $row['idPedido']; ?>">
+                        <input type="hidden" name="idSucursal" value="<?php echo $row['idSucursal'];?>">
                         
                         <?php
                             require '../../Assets/ConectionBD/conexionbd.php';
@@ -80,14 +81,15 @@
                         </div>
                         <?php
                             if ($consultaProducto) {?>
-                                <input type="text" name="idPedido" value="<?php echo $consultaProducto[0]['idProducto']; ?>">
+                                <input type="hidden" name="idProducto" value="<?php echo $consultaProducto[0]['idProducto']; ?>">
                         <?php
                             }
                             else {?>
-                               <input type="text" name="idPedido" value="">
+                               <input type="text" name="idProducto" value="">
                                 <?php
                             }
                         ?>
+                        
                         
                         <div class="mb-3">
                             

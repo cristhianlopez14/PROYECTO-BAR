@@ -44,8 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['sucursal'])) {
     <input type="hidden" name="idSucursal" value="<?php echo $selectedSucursal; ?>">
     <label for="numeroMesa">Número de Mesa:</label>
     <input type="text" name="numeroMesa" required><br>
+
     <label for="estado">Estado:</label>
-    <input type="text" name="estado" required><br>
+    <select name="estado" id="" required>
+        <option value="Disponible">Disponible</option>
+        <option value="Ocupada">Ocupada</option>
+        <option value="Reservada">Reservada</option>
+    </select><br>
     <label for="capacidad">Capacidad:</label>
     <input type="number" name="capacidad" required><br>
     <input type="submit" name="submit" value="Agregar Mesa">

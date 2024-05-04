@@ -6,11 +6,8 @@ if(!empty($_POST["registro"])){
         or empty($_POST["mesa"])
         or empty($_POST["idUsuario"])  
         or empty($_POST["estadoPedido"]) 
-        or empty($_POST["total"])
-        or empty($_POST["numeroProductos"])
         or empty($_POST["fecha"])
         or empty($_POST["sucursal"])
-        or empty($_POST["productos"])
         )
         echo 'los campos no estan diligenciados pedido';
         else {
@@ -21,13 +18,11 @@ if(!empty($_POST["registro"])){
             $total=$_POST["total"];
             $fecha=$_POST["fecha"];
             $sucursal=$_POST["sucursal"];
-            $productos=$_POST["productos"];
-            $numeroProductos = $_POST["numeroProductos"];
-            $sql=$conexion->query("INSERT into pedido(numeroPedido,idMesa,idUsuario,estadoPedido,totalPedido,numeroProductos,fechaRegistro,idSucursal,productos)
-            values('$numeroPedido','$mesa','$idUsuario','$estadoPedido', '$total', '$numeroProductos', '$fecha', '$sucursal', '$productos')");
+            $sql=$conexion->query("INSERT into pedido(numeroPedido,idMesa,idUsuario,estadoPedido,totalPedido,fechaRegistro,idSucursal)
+            values('$numeroPedido','$mesa','$idUsuario','$estadoPedido', '$total', '$fecha', '$sucursal')");
             //echo 'registro exitoso';
             if ($sql==1) {
-                echo 'usuario registrado corectamente';
+                echo 'Pedido registrado corectamente';
             } else {
                 echo 'no se ha registro';
             }

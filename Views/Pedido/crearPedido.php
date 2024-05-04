@@ -50,12 +50,7 @@
                         <div class="mb-3">
                         <input type="hidden" name="estadoPedido" value="En Proceso">
                         <div class="mb-3">
-                            <label for="total" class="form-label">Total</label>
-                            <input type="text" placeholder="Total Pedido" name="total" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="numeroProductos" class="form-label">Número de Productos</label>
-                            <input type="number" placeholder="Número Producto" name="numeroProductos" class="form-control">
+                            <input type="hidden" placeholder="Total Pedido" name="total" class="form-control" value='0'>
                         </div>
                         <div class="mb-3">
                             <label for="fecha" class="form-label">Fecha Registro</label>
@@ -77,10 +72,7 @@
                                 ?>       
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="productos" class="form-label">Productos </label>
-                            <input type="text" placeholder="productos" name="productos" class="form-control">
-                        </div>
+                        
                         
                         <input type="submit" name="registro" id="Registrar">
                     </form>
