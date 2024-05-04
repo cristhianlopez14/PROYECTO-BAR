@@ -10,9 +10,11 @@
 
 	
 	
-	$sql10 = "INSERT INTO pedidoInventario (idPedido, idProducto, cantidad, idSucursal) 
-				VALUES ('$idPedido', '$idProducto', '$cantidad', '$sucursal')";
+	$sql10 = "INSERT INTO pedidoInventario (idPedido, idProducto, cantidad, idSucursal) VALUES ('$idPedido', '$idProducto', '$cantidad', '$sucursal')";
 	$resultado = $conexion->query($sql10);
+
+	$sql11 = "UPDATE inventario SET cantidadStock = cantidadStock - '$cantidad' where idProducto = '$idProducto'";
+	$resultado2 = $conexion->query($sql11);
 
 	if ($resultado==1) {
 		print_r('Registro Creado') ;
