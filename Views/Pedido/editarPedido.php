@@ -41,6 +41,7 @@
     function buscar(){
         var idProducto = document.getElementById('idProducto').value;
         window.location.href = "http://localhost/xampp/PROYECTO-BAR/Views/Pedido/pedido.php?idProducto="+idProducto;
+        
     }
 </script>
 <div class="modal fade" id="Editar<?php echo $row['idPedido'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
