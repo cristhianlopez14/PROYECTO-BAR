@@ -25,21 +25,22 @@
                 
                 <div class="modal-body">
                     <!-- Formulario de Editar --> 
-                    <?php
-                    $consulta = $conexion->prepare('SELECT * FROM pedidoinventario WHERE idPedido =?');
-    
-                    $consulta->bind_param('i', $row['idPedido']);
-                    $consulta->execute();
-                    $resultado = $consulta->get_result();
-                    while($rows = $resultado->fetch_array(MYSQLI_ASSOC)) {
-
+                    <?php 
+                        $consulta = $conexion->prepare('SELECT * FROM pedidoinventario WHERE idPedido =?');
+                        $consulta->bind_param('i', $row['idPedido']);
+                        $consulta->execute();
+                        $resultado = $consulta->get_result();
+                        while($rows = $resultado->fetch_array(MYSQLI_ASSOC)) {
+                            $idProducto = $rows['idProducto'];
+                            $consultar = $conexion->prepare('SELECT * FROM inventario WHERE idProducto = ?');
+                            $consultar->bind_param('i', $idProducto);
+                            $consultar->execute();
+                            $resultadoProducto = $consultar->get_result();
+                            $producto = $resultadoProducto->fetch_assoc(); // Obtiene la fila de resultado como un array asociativo
                     ?>
+                        <h6>Producto: <?php echo $producto['producto']; ?></h6> <h6>Cantidad: <?php echo $rows['cantidad']; ?></h6> <h6>Precio: <?php echo $rows['idProducto']; ?></h6> <hr>
+                        <?php } ?>
 
-                    
-                    <h6>Producto: <?php echo $rows['idProducto']; ?></h6> <h6>Cantidad: <?php echo $rows['cantidad']; ?></h6> <h6>Precio: <?php echo $rows['idProducto']; ?></h6> <hr>
-
-                    <?php }
-                ?> 
                 </div>
                 
                 <div class="modal-footer">
