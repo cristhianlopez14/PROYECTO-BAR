@@ -6,11 +6,10 @@
 	$idPedido = $_POST['idPedido'];
 	$idProducto = $_POST['idProducto'];
 	$cantidad = $_POST['cantidad'];
-	$sucursal = $_POST['idSucursal'];
 
 	
 	
-	$sql10 = "INSERT INTO pedidoInventario (idPedido, idProducto, cantidad, idSucursal) VALUES ('$idPedido', '$idProducto', '$cantidad', '$sucursal')";
+	$sql10 = "INSERT INTO orden (idPedido, idProducto, cantidad) VALUES ('$idPedido', '$idProducto', '$cantidad')";
 	$resultado = $conexion->query($sql10);
 
 	$sql11 = "UPDATE inventario SET cantidadStock = cantidadStock - '$cantidad' where idProducto = '$idProducto'";

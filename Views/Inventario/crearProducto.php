@@ -20,8 +20,12 @@
                             <label for="cantidad" class="form-label">Cantidad</label>
                             <input type="text" placeholder="Cantidad Producto" value="0" name="cantidad" class="form-control">
                         <div class="mb-3">
-                            <label for="precio" class="form-label">Precio</label>
+                            <label for="precio" class="form-label">Precio Venta</label>
                             <input type="number" placeholder="Precio Producto" name="precio" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precioCompra" class="form-label">Precio Compra</label>
+                            <input type="number" placeholder="Precio Producto Compra" name="precioCompra" class="form-control">
                         </div>
                         
                         <input type="submit" name="registro" id="Registrar" class="btn btn-primary" data-bs-dismiss="modal">

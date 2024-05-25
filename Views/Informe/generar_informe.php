@@ -15,14 +15,18 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener datos (cambia esto según tus necesidades)
-$sql = "SELECT * FROM pedidoinventario";
+$sql = "SELECT p.idPedido,p.numeroPedido,p.fechaRegistro,p.estadoPedido,
+SUM(o.cantidad * (i.precioUnitario - i.precioCompra)) AS ganancias
+FROM pedido p
+JOIN orden o ON p.idPedido = o.idPedido
+JOIN inventario i ON o.idProducto = i.idProducto
+GROUP BY p.idPedido, p.numeroPedido, p.fechaRegistro, p.estadoPedido";
 $sql_usuarios = "SELECT * FROM usuario";
 $sql_inventario = "SELECT * FROM inventario";
 
 
 $result = $conn->query($sql);
-$result_usuarios = $conn->query($sql_usuarios);
-$result_inventario = $conn->query($sql_inventario);
+
 
 
 // Generar el informe (por ejemplo, imprimir datos como CSV)
@@ -42,26 +46,6 @@ if ($result->num_rows > 0) {
     } while ($row = $result->fetch_assoc());
 }
 
-if ($result_usuarios->num_rows > 0) {
-    // Encabezados del CSV
-    $row = $result_usuarios->fetch_assoc();
-    fputcsv($output, array_keys($row));
-
-    // Datos de la tabla
-    do {
-        fputcsv($output, $row);
-    } while ($row = $result_usuarios->fetch_assoc());
-}
-if ($result_inventario->num_rows > 0) {
-    // Encabezados del CSV
-    $row = $result_inventario->fetch_assoc();
-    fputcsv($output, array_keys($row));
-
-    // Datos de la tabla
-    do {
-        fputcsv($output, $row);
-    } while ($row = $result_inventario->fetch_assoc());
-}
 
 fclose($output);
 $conn->close();

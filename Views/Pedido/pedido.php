@@ -8,6 +8,7 @@
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -92,6 +93,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Número Pedido</th>
                     <th>Mesa</th>
                     <th>Usuario</th>
                     <th>Estado</th>
@@ -105,13 +107,14 @@
             </thead>
             <tbody>
                 <?php 
-                    $sqlMostrar = "SELECT * FROM pedido";
-                    $resultadoMostrar = $conexion->query($sqlMostrar);
+                    $sql2 = "SELECT * FROM pedido";
+                    $resultadoMostrar = $conexion->query($sql2);
                     while($row = $resultadoMostrar->fetch_array(MYSQLI_ASSOC)) {
                 ?>
                 <tr>
                     <th><?php echo $row['idPedido']; ?></th>
-                        <th><?php echo $row['idMesa']; ?></th>
+                    <th><?php echo $row['numeroPedido']; ?></th>
+                    <th><?php echo $row['idMesa']; ?></th>
                     <th><?php echo $row['idUsuario']; ?></th>
                     <th><?php echo $row['estadoPedido']; ?></th>
                     <th><?php echo $row['totalPedido']; ?></th>
@@ -119,7 +122,7 @@
                     <th><?php echo $row['fechaRegistro']; ?></th>
                     <th><?php echo $row['idSucursal']; ?></th>
                     <th>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Ver<?php echo $row['idPedido'];?>">Ver Producto</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Ver<?php echo $row['idPedido'];?>">Ver Producto</button>
                     </th>
 
                     <td>
@@ -127,19 +130,12 @@
                     </td>
                     <?php
                         include("verPedido.php"); 
-                    ?>
-                    <?php
+                    
                         include("editarPedido.php"); 
                     ?>
                 </tr>
                 <?php }
                 ?> 
-                
-                    <!-- <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal">Editar</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal">Eliminar</button>
-                    </td>
-                </tr> -->
                 
             </tbody>
         </table>
@@ -149,7 +145,9 @@
         include("crearPedido.php")
     ?>
     
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

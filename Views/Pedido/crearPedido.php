@@ -73,13 +73,11 @@
                         </div>
                         
                         
-                        <input type="submit" name="registro" id="Registrar">
+                        <input type="submit" name="registro" id="Registrar" class="btn btn-primary" data-bs-dismiss="modal">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
                     </form>
                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" name="registro" class="btn btn-primary" data-bs-dismiss="modal">Crear Usuario</button>
-                    </div>
                 </div>
             </div>
         </div>

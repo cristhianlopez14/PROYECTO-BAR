@@ -57,7 +57,6 @@
                     
                     <form action="#" method="post">
                         <input type="text" name="idPedido" value="<?php echo $row['idPedido']; ?>">
-                        <input type="hidden" name="idSucursal" value="<?php echo $row['idSucursal'];?>">
                         
                         <?php
                             require '../../Assets/ConectionBD/conexionbd.php';

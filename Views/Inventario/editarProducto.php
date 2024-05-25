@@ -26,8 +26,13 @@
                             <input type="text" placeholder="Descripción Producto" name="cantidad" class="form-control" value="<?php echo $row['cantidadStock']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="precio" class="form-label">Precio</label>
+                            <label for="precio" class="form-label">Precio Venta</label>
                             <input type="text" placeholder="Precio Producto" name="precio" class="form-control" value="<?php echo $row['precioUnitario']; ?>">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="precioCompra" class="form-label">Precio Compra</label>
+                            <input type="text" placeholder="Precio Producto" name="precioCompra" class="form-control" value="<?php echo $row['precioCompra']; ?>">
                         </div>
                         
                         <button type="submit" class="btn btn-primary" value="editarProducto" name="editarProducto">Guardar Cambios</button>

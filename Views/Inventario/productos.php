@@ -88,7 +88,8 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Cantidad</th>
-                    <th>Precio</th>
+                    <th>Precio Venta</th>
+                    <th>Precio Compra</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -104,6 +105,7 @@
                     <th><?php echo $row['descripcionProducto']; ?></th>
                     <th><?php echo $row['cantidadStock']; ?></th>
                     <th><?php echo $row['precioUnitario']; ?></th>
+                    <th><?php echo $row['precioCompra']; ?></th>
 
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Editar<?php echo $row['idProducto'];?>">Editar</button>
@@ -116,11 +118,6 @@
                 <?php }
                 ?> 
                 
-                    <!-- <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal">Editar</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal">Eliminar</button>
-                    </td>
-                </tr> -->
                 
             </tbody>
         </table>
