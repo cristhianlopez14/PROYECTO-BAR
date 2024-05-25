@@ -92,7 +92,6 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Número Pedido</th>
                     <th>Mesa</th>
                     <th>Usuario</th>
                     <th>Estado</th>
@@ -112,8 +111,7 @@
                 ?>
                 <tr>
                     <th><?php echo $row['idPedido']; ?></th>
-                    <th><?php echo $row['numeroPedido']; ?></th>
-                    <th><?php echo $row['idMesa']; ?></th>
+                        <th><?php echo $row['idMesa']; ?></th>
                     <th><?php echo $row['idUsuario']; ?></th>
                     <th><?php echo $row['estadoPedido']; ?></th>
                     <th><?php echo $row['totalPedido']; ?></th>

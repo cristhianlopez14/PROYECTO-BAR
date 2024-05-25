@@ -18,8 +18,8 @@ if(!empty($_POST["registro"])){
             $total=$_POST["total"];
             $fecha=$_POST["fecha"];
             $sucursal=$_POST["sucursal"];
-            $sql=$conexion->query("INSERT into pedido(numeroPedido,idMesa,idUsuario,estadoPedido,totalPedido,fechaRegistro,idSucursal)
-            values('$numeroPedido','$mesa','$idUsuario','$estadoPedido', '$total', '$fecha', '$sucursal')");
+            $sql=$conexion->query("INSERT into pedido(idMesa,idUsuario,estadoPedido,totalPedido,fechaRegistro,idSucursal)
+            values('$mesa','$idUsuario','$estadoPedido', '$total', '$fecha', '$sucursal')");
             //echo 'registro exitoso';
             if ($sql==1) {
                 echo 'Pedido registrado corectamente';
