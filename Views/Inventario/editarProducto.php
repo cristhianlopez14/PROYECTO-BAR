@@ -31,13 +31,12 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary" value="editarProducto" name="editarProducto">Guardar Cambios</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
                     </form>
                 </div>
                 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" name="editarUsuario">Guardar Cambios</button>
-                </div>
+                
             </div>
         </div>
     </div>
